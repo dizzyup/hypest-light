@@ -1,5 +1,5 @@
 root = document.documentElement
-themeName = 'hypest-ui'
+themeName = 'hypest-light'
 
 module.exports =
   activate: (state) ->
