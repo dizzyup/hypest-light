@@ -126,6 +126,9 @@ atom-text-editor.editor {
         left: auto;
         right: 0;
         z-index: 4;
+        bottom: 0;
+        border-top-width: 3px;
+        border-bottom-width: 3px;
       }
     }
   }
@@ -149,8 +152,40 @@ atom-text-editor.editor {
     margin-right: 0;
   }
 
+  .gutter[gutter-name="github-comment-icon"] {
+    order: -99;
+    margin-left: 0;
+    min-width: 2em;
+
+    &::before {
+      width: 100%;
+      background: transparent;
+    }
+
+    .github-editorCommentGutterIcon.react-atom-decoration {
+      padding: 0;
+
+      .icon-comment::before {
+        color: @blue-color;
+        margin-top: 1px;
+        margin-right: 1px;
+      }
+    }
+  }
+
   .cursor-line {
     background: @lighter-color;
+  }
+
+  .github-editorCommentHighlight {
+    box-shadow: inset 0 0 0 1px fade(@blue-color, 15%);
+    width: calc(~"100% " - 4px);
+    background: fade(@blue-color, 5%);
+
+    &.cursor-line {
+      box-shadow: inset 0 0 0 1px @light-color;
+      background: @lighter-color;
+    }
   }
 
   .selection .region {
