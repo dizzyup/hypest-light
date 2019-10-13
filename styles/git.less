@@ -49,8 +49,12 @@
   atom-text-editor {
     &:extend(atom-text-editor[mini]);
 
+    .lines {
+      padding-left: 0;
+    }
+
     .cursor-line {
-      background: @white-color;
+      background: transparent;
     }
   }
 
@@ -159,6 +163,10 @@
 .github-Accordion {
   border-bottom: 1px solid @base-border-color;
 
+  &:last-of-type {
+    border: none;
+  }
+
   .github-Accordion-header {
     padding: 10px;
     border: none;
@@ -197,9 +205,14 @@
 
 // Patch view, gutters & line numbers
 .github-FilePatchView {
+
   .github-FilePatchView-header,
   .github-HunkHeaderView {
     margin: 10px;
+  }
+
+  .lines {
+    padding: 0;
   }
 
   // Meta section
@@ -216,9 +229,6 @@
 
   // Line decorations
 
-  .line {
-    padding-left: 4px;
-  }
   &-line {
     &--deleted {
       color: darken(@red-color, 30%);
@@ -233,19 +243,6 @@
       &.line.cursor-line {
         background-color: fade(@green-color, 30%);
       }
-    }
-  }
-
-  // Gutter
-
-  .gutter {
-    margin-right: -4px;
-    &.old .line-number,
-    &.new .line-number {
-      min-width: 60px;
-    }
-    .github-editorCommentGutterIcon.decoration {
-      width: calc(~"100% - " 4px);
     }
   }
 }
@@ -392,6 +389,13 @@
   }
 }
 
+.github-Reviews-section,
+.github-StubItem-github-reviews-section {
+  &:last-of-type {
+    border: none;
+  }
+}
+
 .github-Reviews {
   .github-Reviews-emptyState {
     text-align: center;
@@ -437,6 +441,27 @@
   .github-Review-nav + .github-AtomTextEditor-container {
     atom-text-editor {
       border-radius: 0;
+      padding: 0;
+
+      .lines {
+        padding-left: 0;
+      }
+
+      .cursor-line {
+        background: transparent;
+      }
+    }
+  }
+  .github-DotComMarkdownHtml pre, .github-DotComMarkdownHtml code {
+    background: @light-color;
+  }
+  .github-EmojiReactions-add.btn {
+    background: linear-gradient(@white-color, @lighter-color);
+
+    &:focus.btn, &:active.btn {
+      background: linear-gradient(@white-color, @lighter-color);
+      box-shadow: 0 0 0 1px fade(@black-color, 15%),
+        inset 0 1px 0 fade(@black-color, 5%);
     }
   }
 }
@@ -473,5 +498,18 @@
     background: none;
     border-radius: 0;
     transform: none;
+  }
+}
+
+.github-AtomTextEditor-container {
+  atom-text-editor {
+
+    .lines {
+      padding-left: 0;
+    }
+
+    .cursor-line {
+      background: transparent;
+    }
   }
 }
