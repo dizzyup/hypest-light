@@ -222,6 +222,12 @@ html.hypest-vibrancy {
     .github-StatusBarTileController > .inline-block:hover {
       background: fade(@dark-color, 5%);
     }
+    .linter-status-count a.text-warning:hover {
+      background: @orange-color;
+    }
+    .linter-status-count a.text-error:hover {
+      background: darken(@red-color, 15%);
+    }
   }
 }
 
