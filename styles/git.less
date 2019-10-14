@@ -129,6 +129,11 @@
 .github-Git {
   .btn {
     cursor: pointer;
+
+    &.disabled,
+    &[disabled] {
+      cursor: not-allowed;
+    }
   }
 }
 
@@ -215,6 +220,10 @@
     padding: 0;
   }
 
+  .react-atom-decoration {
+    background: transparent;
+  }
+
   // Meta section
   // Used for mode changes
 
@@ -287,6 +296,8 @@
   }
 
   atom-text-editor {
+    background: transparent;
+
     .selection .region {
       background-color: @region-selection-color;
     }
@@ -311,6 +322,8 @@
 }
 
 .github-HunkHeaderView {
+  background: transparent;
+
   &-title,
   &-stageButton,
   &-discardButton {
@@ -429,6 +442,12 @@
     justify-content: center;
     transition: background ease 0.2s;
     cursor: pointer;
+
+    &[disabled] {
+      color: @text-color-subtle;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
 
     &:hover {
       background: @light-color;
