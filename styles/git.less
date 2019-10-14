@@ -224,6 +224,13 @@
     background: transparent;
   }
 
+  .github-FilePatchView-showDiffButton {
+    &:extend(.btn);
+    font-size: 13px;
+    padding: 0 8px;
+    margin: 10px 0 20px;
+  }
+
   // Meta section
   // Used for mode changes
 
@@ -395,7 +402,11 @@
   }
 }
 
-.github-IssueishDetailView-meta {
+.github-IssueishDetailView,
+.github-CommitDetailView,
+.github-FilePatchView {
+  background: @white-color;
+
   code {
     color: @text-color;
     background: @light-color;

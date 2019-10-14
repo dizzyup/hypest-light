@@ -219,7 +219,8 @@ html.hypest-vibrancy {
   .status-bar-right {
     a:hover,
     .deprecation-cop-status:hover,
-    .github-StatusBarTileController > .inline-block:hover {
+    .github-StatusBarTileController > .inline-block:hover,
+    .PortalStatusBarIndicator .icon:hover {
       background: fade(@dark-color, 5%);
     }
     .linter-status-count a.text-warning:hover {
@@ -227,6 +228,9 @@ html.hypest-vibrancy {
     }
     .linter-status-count a.text-error:hover {
       background: darken(@red-color, 15%);
+    }
+    .PortalStatusBarIndicator .icon.transmitting:hover {
+      background: darken(@blue-color, 5%);
     }
   }
 }
