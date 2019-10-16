@@ -36,6 +36,8 @@
     overflow: hidden;
 
     span {
+      position: relative;
+      width: 100%;
       z-index: 1;
       white-space: nowrap;
       text-overflow: ellipsis;
@@ -71,8 +73,97 @@
       border-radius: 4px;
     }
   }
+
+  .list-item.status-modified,
+  .directory.status-modified:not(.project-root) > .header.list-item:first-child {
+    font-weight: 600;
+    color: @text-color;
+
+    span {
+      padding-right: 20px;
+
+      &::after {
+        content: '\f06d';
+        font-weight: normal;
+        color: fade(@dark-color, 60%);
+        position: absolute;
+        right: -1px;
+        top: 0;
+        bottom: 0;
+        font-family: 'Octicons Regular';
+        font-size: 14.2px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.selected {
+      color: @white-color;
+
+      span::after {
+        color: fade(@white-color, 80%);
+      }
+    }
+  }
+
+  .directory.status-modified:not(.project-root).selected > .header.list-item:first-child {
+    color: @white-color;
+
+    span::after {
+      color: fade(@white-color, 80%);
+    }
+  }
+
+  .list-item.status-added,
+  .directory.status-added:not(.project-root) > .header.list-item:first-child {
+    font-weight: 600;
+    color: @text-color;
+
+    span {
+      padding-right: 20px;
+
+      &::after {
+        content: '\f06b';
+        font-weight: normal;
+        color: fade(@dark-color, 60%);
+        position: absolute;
+        right: -1px;
+        top: 0;
+        bottom: 0;
+        font-family: 'Octicons Regular';
+        font-size: 14.2px;
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &.selected {
+      color: @white-color;
+
+      span::after {
+        color: fade(@white-color, 80%);
+      }
+    }
+  }
+
+  .directory.status-added:not(.project-root).selected > .header.list-item:first-child {
+    color: @white-color;
+
+    span::after {
+      color: fade(@white-color, 80%);
+    }
+  }
+
+  .project-root-header {
+    font-weight: 500;
+    color: @text-color;
+  }
+
+  .selected .project-root-header {
+    color: @white-color;
+  }
 }
 
 .header > .icon-repo:before {
-  top: 3px;
+  top: 2px;
 }

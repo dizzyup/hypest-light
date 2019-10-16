@@ -2,7 +2,7 @@ html.hypest-vibrancy {
   background: transparent;
 
   body {
-    background-color: fade(@app-background-color, 0%);
+    background-color: fade(@app-background-color, 40%);
   }
 
   atom-workspace,
@@ -24,7 +24,7 @@ html.hypest-vibrancy {
 
   atom-panel-container.left .atom-dock-mask,
   atom-panel-container.right .atom-dock-mask {
-    background: fade(@white-color, 30%);
+    background: transparent;
   }
 
   atom-panel-container.left .tab-bar,
@@ -38,8 +38,8 @@ html.hypest-vibrancy {
       background-clip: padding-box;
       margin: 0;
       height: 32px;
-      border-bottom: 1px solid fade(@mid-color, 40%);
-      border-left: 1px solid fade(@mid-color, 40%);
+      border-bottom: 1px solid fade(@dark-color, 20%);
+      border-left: 1px solid fade(@dark-color, 20%);
 
       &:hover {
         background-color: fade(@white-color, 40%);
@@ -48,8 +48,8 @@ html.hypest-vibrancy {
       &.active {
         height: 32px;
         background-color: fade(@white-color, 60%);
-        border-bottom: 1px solid fade(@mid-color, 40%);
-        border-left: 1px solid fade(@mid-color, 40%);
+        border-bottom: 1px solid fade(@dark-color, 20%);
+        border-left: 1px solid fade(@dark-color, 20%);
       }
 
       &:first-child {
@@ -68,7 +68,7 @@ html.hypest-vibrancy {
   }
 
   atom-panel-container.left {
-    box-shadow: inset -1px 0 0 fade(@mid-color, 40%);
+    box-shadow: inset -1px 0 0 fade(@dark-color, 20%);
     padding-right: 1px;
     border: none;
     margin-left: -1px;
@@ -79,7 +79,7 @@ html.hypest-vibrancy {
   }
 
   atom-panel-container.right {
-    box-shadow: inset 1px 0 0 fade(@mid-color, 40%);
+    box-shadow: inset 1px 0 0 fade(@dark-color, 20%);
     padding-left: 1px;
     border: none;
     margin-right: -1px;
@@ -144,9 +144,9 @@ html.hypest-vibrancy {
 
   .status-bar {
     box-shadow: none;
-    border-top: 1px solid fade(@mid-color, 40%);
+    border-top: 1px solid fade(@dark-color, 20%);
     background-clip: padding-box;
-    background-color: fade(@white-color, 50%);
+    background: fade(@dark-color, 5%);
   }
 
   .github-CommitView-buttonWrapper,
@@ -163,24 +163,48 @@ html.hypest-vibrancy {
   .github-Review,
   .github-Accordion,
   .github-Accordion-content {
-    border-color: fade(@mid-color, 40%);
+    border-color: fade(@dark-color, 20%);
+  }
+
+  .github-StagingView-header,
+  .github-Reviews-topHeader {
+    background: fade(@white-color, 20%);
+  }
+
+  .github-StagingView-headerButton {
+    &:hover {
+      background: fade(@dark-color, 5%);
+    }
+  }
+
+  .github-Accordion-listItem {
+    border: 0;
+    box-shadow: 0 1px 0 fade(@dark-color, 20%);
+    margin-bottom: 1px;
+
+    &:last-child {
+      margin-bottom: 0;
+      box-shadow: 0;
+    }
   }
 
   .github-Git,
   .github-GitHub,
   .github-Reviews {
-    box-shadow: 0 -1px 0 fade(@mid-color, 40%);
-    background-color: fade(@white-color, 60%);
+    background-color: transparent;
   }
 
   .github-Review,
   .github-ReviewSummary {
     background-color: fade(@white-color, 60%);
+    border: 0;
+    box-shadow: 0 0 0 1px fade(@dark-color, 20%);
   }
 
   .github-Accordion-content {
     background-color: fade(@white-color, 60%);
-    border-color: fade(@mid-color, 40%);
+    border: 0;
+    box-shadow: 0 0 0 1px fade(@dark-color, 20%);
   }
 
   .github-GitHub-LargeIcon.icon:before {
@@ -214,6 +238,8 @@ html.hypest-vibrancy {
       }
     }
   }
+
+
 
   .status-bar-left,
   .status-bar-right {
@@ -270,12 +296,13 @@ html.hypest-vibrancy body.is-blurred {
     .tab,
     .tab.active {
       color: @text-color-subtle !important;
-      border-bottom-color: fade(@mid-color, 0%) !important;
+      border-bottom-color: fade(@mid-color, 40%) !important;
       border-right-color: fade(@mid-color, 40%) !important;
       box-shadow: none !important;
 
       &:only-child {
         background: transparent !important;
+        border: 0;
         box-shadow: none !important;
       }
     }

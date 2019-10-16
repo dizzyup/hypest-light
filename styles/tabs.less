@@ -69,6 +69,9 @@
     .close-icon,
     &.modified .close-icon,
     &.modified:not(:hover) .close-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: @text-color;
       width: 16px;
       height: 16px;
@@ -96,10 +99,12 @@
       }
     }
     .close-icon::before {
-      position: absolute;
-      top: 1px;
-      left: 2px;
-      line-height: 13px;
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      text-align: center;
     }
 
     &.is-dragging {
