@@ -25,11 +25,24 @@
 .github-CommitView-editor {
   &:extend(atom-text-editor[mini]);
 
+  atom-text-editor {
+    background: transparent;
+
+    .cursor-line::before {
+      display: none;
+    }
+  }
+
   &:focus-within {
     &:extend(atom-text-editor[mini].is-focused);
+
+    atom-text-editor {
+      background: transparent;
+    }
   }
 
   .github-CommitView-coAuthorToggle {
+    background: transparent;
     margin-left: 2px;
     margin-bottom: 2px;
 
@@ -39,6 +52,7 @@
   }
 
   .github-CommitView-expandButton {
+    background: transparent;
     margin-right: 2px;
     margin-bottom: 2px;
     cursor: pointer;
@@ -137,11 +151,13 @@
   }
 }
 
-.github-GithubLoginView .github-GithubLoginView-Subview h1 {
+.github-GithubLoginView .github-GithubLoginView-Subview h1,
+.github-Git.no-repository h1 {
   margin-bottom: 0;
 }
 
-.github-GitHub-LargeIcon.icon:before {
+.github-GitHub-LargeIcon.icon:before,
+.github-Git-LargeIcon.icon:before {
   width: auto;
   margin-bottom: 10px;
 }
@@ -213,7 +229,9 @@
 
   .github-FilePatchView-header,
   .github-HunkHeaderView {
+    color: @text-color;
     margin: 10px;
+    background: transparent;
   }
 
   .lines {
@@ -281,6 +299,8 @@
   }
 
   atom-text-editor {
+    color: @text-color;
+    background: transparent;
     .selection .region {
       background-color: @region-selection-color;
     }
@@ -304,7 +324,6 @@
 
   atom-text-editor {
     background: transparent;
-
     .selection .region {
       background-color: @region-selection-color;
     }
@@ -314,6 +333,7 @@
 // Selected + focused hunkmode
 .github-FilePatchView.github-FilePatchView--hunkMode:focus-within {
   atom-text-editor {
+    background: transparent;
     .selection .region {
       background-color: @region-selection-color;
     }
@@ -326,6 +346,10 @@
 .github-HunkHeaderView {
   border-radius: 5px;
   overflow: hidden;
+}
+
+.github-CommitDetailView-header {
+  background: transparent;
 }
 
 .github-HunkHeaderView {
@@ -475,6 +499,7 @@
   }
   .github-Review-nav + .github-AtomTextEditor-container {
     atom-text-editor {
+      background: transparent;
       border-radius: 0;
       padding: 0;
 
@@ -509,6 +534,7 @@
 .github-Review,
 .github-ReviewSummary {
   border-radius: 5px;
+  background: @white-color;
 }
 
 .github-CommitView-editor .github-CommitView-hardwrap {

@@ -178,3 +178,65 @@ atom-text-editor.editor {
     border-left: 1px dashed @base-border-color;
   }
 }
+
+.hypest-dark-syntax {
+  atom-text-editor[mini] {
+    &.is-focused {
+      .selection .region {
+        background: @region-selection-color;
+      }
+    }
+    .selection .region {
+      background: transparent;
+    }
+  }
+  .lines {
+    .cursor-line {
+      background: fade(@white-color, 5%);
+
+      &::before {
+        background: fade(@white-color, 5%);
+      }
+    }
+  }
+  atom-text-editor.editor {
+    .gutter {
+      background: fade(@black-color, 25%);
+      box-shadow: inset -1px 0 0 fade(@white-color, 10%);
+      .line-number {
+        color: @light-color;
+        background: fade(@black-color, 5%);
+        box-shadow: none;
+        &.cursor-line {
+          color: @light-color !important;
+          opacity: 1;
+          background: fade(@white-color, 10%);
+        }
+        &.cursor-line-no-selection {
+          background: fade(@white-color, 15%);
+        }
+      }
+    }
+    .gutter[gutter-name="github-comment-icon"] {
+      background: fade(@black-color, 25%);
+    }
+    .github-editorCommentHighlight {
+      &.cursor-line {
+        box-shadow: inset 0 0 0 1px fade(@blue-color, 15%);
+        background: fade(@blue-color, 15%);
+      }
+    }
+    .selection .region {
+      background: fade(@white-color, 15%);
+    }
+    .wrap-guide {
+      border-right: 1px dotted fade(@white-color, 10%);
+    }
+    .invisible-character, .indent-guide {
+      color: fade(@white-color, 10%);
+    }
+    .indent-guide {
+      border-left: 1px dashed fade(@white-color, 5%);
+    }
+  }
+}

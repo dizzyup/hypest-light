@@ -6,11 +6,15 @@
 
 .tree-view {
   background: @light-color;
+  top: -3px !important;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0px, black 3px, black 100%);
 
   .tree-view-root {
     min-width: 0;
     width: 100%;
     overflow-x: hidden;
+    padding-top: 3px;
+    padding-bottom: 5px;
   }
 
   .list-item {
@@ -166,4 +170,10 @@
 
 .header > .icon-repo:before {
   top: 2px;
+}
+
+.is-blurred {
+  .tree-view {
+    opacity: .8;
+  }
 }
