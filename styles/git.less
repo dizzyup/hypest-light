@@ -249,6 +249,28 @@
     margin: 10px 0 20px;
   }
 
+  .gutter {
+    background: fade(@darker-color, 3%);
+    box-shadow: inset -1px 0 0 fade(@dark-color, 5%);
+  }
+
+  .gutter[gutter-name="github-comment-icon"] {
+    order: -99;
+    margin-right: -1px;
+    background: @white-color;
+    min-width: 2em;
+
+    .github-editorCommentGutterIcon.react-atom-decoration {
+      padding: 0;
+
+      .icon-comment::before {
+        color: @blue-color;
+        margin-top: 1px;
+        margin-right: 1px;
+      }
+    }
+  }
+
   // Meta section
   // Used for mode changes
 
@@ -268,14 +290,14 @@
       color: darken(@red-color, 30%);
       background-color: fade(@red-color, 20%);
       &.line.cursor-line {
-        background-color: fade(@red-color, 30%);
+        background-color: fade(@red-color, 30%) !important;
       }
     }
     &--added {
       color: darken(@green-color, 30%);
       background-color: fade(@green-color, 20%);
       &.line.cursor-line {
-        background-color: fade(@green-color, 30%);
+        background-color: fade(@green-color, 30%) !important;
       }
     }
   }
@@ -288,13 +310,21 @@
   .gutter {
     &.old .line-number,
     &.new .line-number,
-    &.icons .line-number,
-    &[gutter-name="github-comment-icon"] .github-editorCommentGutterIcon {
+    &.icons .line-number {
+      color: @text-color;
+      background: transparent;
+      z-index: 1 !important;
+      box-shadow: inset -1px 0 0 fade(@dark-color, 3%);
+
       &.github-FilePatchView-line--selected {
-        color: @text-color;
-        background: @light-color;
-        z-index: 1 !important;
-        box-shadow: inset -1px 0 0 fade(@dark-color, 3%);
+        color: @white-color;
+        background: lighten(@mid-color, 15%) !important;
+      }
+    }
+    &[gutter-name="github-comment-icon"] {
+
+      .github-editorCommentGutterIcon.github-FilePatchView-line--selected {
+        background: #fff;
       }
     }
   }
@@ -313,12 +343,20 @@
   .gutter {
     &.old .line-number,
     &.new .line-number,
-    &.icons .line-number,
-    &[gutter-name="github-comment-icon"] .github-editorCommentGutterIcon {
+    &.icons .line-number {
+      color: @text-color;
+      background: transparent;
+      z-index: 1 !important;
+
       &.github-FilePatchView-line--selected {
-        color: @text-color;
-        background: @light-color;
-        z-index: 1 !important;
+        color: @white-color;
+        background: @blue-color !important;
+      }
+    }
+    &[gutter-name="github-comment-icon"] {
+
+      .github-editorCommentGutterIcon.github-FilePatchView-line--selected {
+        background: #fff;
       }
     }
   }
@@ -504,12 +542,8 @@
       border-radius: 0;
       padding: 0;
 
-      .lines {
-        padding-left: 0;
-      }
-
-      .cursor-line {
-        background: transparent;
+      .gutter-container {
+        display: none;
       }
     }
   }
@@ -563,15 +597,44 @@
   }
 }
 
-.github-AtomTextEditor-container {
-  atom-text-editor {
+.hypest-light-syntax, .hypest-dark-syntax {
 
-    .lines {
-      padding-left: 0;
-    }
+  .github-AtomTextEditor-container {
+    atom-text-editor,
+    atom-text-editor.editor:not(.mini) {
+      color: @text-color;
 
-    .cursor-line {
-      background: transparent;
+      .lines {
+        padding-left: 0 !important;
+      }
+
+      .gutter {
+        background: fade(@darker-color, 3%);
+        box-shadow: inset -1px 0 0 fade(@dark-color, 5%);
+      }
+
+      .gutter[gutter-name="github-comment-icon"] {
+        background: @white-color;
+      }
+
+      .cursor {
+        border-color: @text-color;
+      }
+
+      .region.selection {
+        background: @light-color;
+      }
+
+      &.is-focused {
+
+        .region.selection {
+          background: @region-selection-color;
+        }
+
+        .cursor-line {
+          background: transparent;
+        }
+      }
     }
   }
 }
