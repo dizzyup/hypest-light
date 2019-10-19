@@ -74,20 +74,22 @@ atom-text-editor[mini] {
 atom-text-editor.editor {
 
   .gutter {
-    background: transparent;
+    background: fade(@darker-color, 3%);
     box-shadow: inset -1px 0 0 fade(@dark-color, 5%);
 
     .line-number {
       padding-right: 4px;
-      background: fade(@darker-color, 3%);
+      background: transparent;
       box-shadow: none;
 
       &.cursor-line {
-        background: fade(@darker-color, 8%);
+        box-shadow: inset -1px 0 0 fade(@dark-color, 5%);
+        background: fade(@darker-color, 5%);
       }
 
       &.cursor-line-no-selection {
-        background: fade(@darker-color, 8%);
+        box-shadow: inset -1px 0 0 fade(@dark-color, 5%);
+        background: fade(@darker-color, 5%);
       }
 
       &.git-line-modified {
@@ -175,7 +177,7 @@ atom-text-editor.editor {
 
   .indent-guide {
     box-shadow: none;
-    border-left: 1px dashed @base-border-color;
+    border-left: 1px solid fade(@base-border-color, 50%);
   }
 }
 
@@ -205,7 +207,6 @@ atom-text-editor.editor {
       box-shadow: inset -1px 0 0 fade(@white-color, 10%);
       .line-number {
         color: @light-color;
-        background: fade(@black-color, 5%);
         box-shadow: none;
         &.cursor-line {
           color: @light-color !important;
@@ -236,7 +237,7 @@ atom-text-editor.editor {
       color: fade(@white-color, 10%);
     }
     .indent-guide {
-      border-left: 1px dashed fade(@white-color, 5%);
+      border-left: 1px solid fade(@white-color, 5%);
     }
   }
 }
