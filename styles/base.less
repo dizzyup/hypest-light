@@ -203,14 +203,19 @@ atom-pane {
   background: @lighter-color;
 }
 
-.pane-row {
-  atom-pane {
-    box-shadow: -1px 0 0 fade(@darker-color, 15%);
-    border-right: none;
+atom-pane-resize-handle.vertical {
 
-    &:first-child {
-      box-shadow: none;
-    }
+  & + * {
+    border: none !important;
+    box-shadow: 0 -1px 0 fade(@darker-color, 25%);
+  }
+}
+
+atom-pane-resize-handle.horizontal {
+
+  & + * {
+    border: none !important;
+    box-shadow: -1px 0 0 fade(@darker-color, 15%);
   }
 }
 
