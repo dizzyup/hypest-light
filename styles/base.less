@@ -9,7 +9,10 @@
 body {
   font-size: @font-size;
   color: @text-color;
-  background-color: @app-background-color;
+}
+
+atom-text-editor.hypest-dummy-editor {
+  display: none;
 }
 
 atom-workspace {
@@ -78,7 +81,7 @@ atom-pane-resize-handle.vertical + atom-pane {
 .atom-dock-toggle-button {
   padding: 10px;
   overflow: visible;
-  transition: opacity ease 0.3s, transform ease 0.3s;
+  transition: opacity ease .3s, transform ease 0.3s;
 
   &.left {
     width: 56px;
@@ -99,20 +102,20 @@ atom-pane-resize-handle.vertical + atom-pane {
   }
 
   &:not(.atom-dock-toggle-button-visible) .atom-dock-toggle-button-inner.left {
-    transform: translateX(-30px) !important;
+    transform: translateX(-3px) !important;
     pointer-events: none;
     opacity: 0;
   }
 
   &:not(.atom-dock-toggle-button-visible) .atom-dock-toggle-button-inner.right {
-    transform: translateX(30px) !important;
+    transform: translateX(3px) !important;
     pointer-events: none;
     opacity: 0;
   }
 
   &:not(.atom-dock-toggle-button-visible)
     .atom-dock-toggle-button-inner.bottom {
-    transform: translateY(30px) !important;
+    transform: translateY(3px) !important;
     pointer-events: none;
     opacity: 0;
   }
@@ -125,6 +128,7 @@ atom-pane-resize-handle.vertical + atom-pane {
     border: none;
     box-shadow: 0 2px 8px fade(@black-color, 10%),
       0 1px 2px fade(@black-color, 10%), 0 0 0 1px fade(@black-color, 5%);
+    transition: opacity ease .3s, transform ease 0.3s;
 
     .icon {
       transform: none !important;
@@ -202,14 +206,19 @@ atom-pane {
   background: @lighter-color;
 }
 
-.pane-row {
-  atom-pane {
-    box-shadow: -1px 0 0 fade(@darker-color, 15%);
-    border-right: none;
+atom-pane-resize-handle.vertical {
 
-    &:first-child {
-      box-shadow: none;
-    }
+  & + * {
+    border: none !important;
+    box-shadow: 0 -1px 0 fade(@darker-color, 25%);
+  }
+}
+
+atom-pane-resize-handle.horizontal {
+
+  & + * {
+    border: none !important;
+    box-shadow: -1px 0 0 fade(@darker-color, 15%);
   }
 }
 

@@ -25,10 +25,15 @@
       "order": 1
     },
     "syntaxTheme": {
-      "title": "Improve support for dark syntax themes",
-      "description": "Improves editor styles when using dark syntax themes.",
-      "type": "boolean",
-      "default": "false",
+      "title": "Match syntax theme",
+      "description": "Matches the text editor styles to your syntax theme.",
+      "type": "string",
+      "default": "Detect automatically",
+      "enum": [
+        "Detect automatically",
+        "Always match light theme",
+        "Always match dark theme"
+      ],
       "order": 2
     },
     "tabCloseButton": {
