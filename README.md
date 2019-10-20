@@ -3,24 +3,19 @@
 
 # Hypest Light for Atom (β)
 
-A light, native and refined UI theme for Atom — with optional vibrancy, and
-theming for several popular third-party Atom plugins. Also available in a
-[dark version](https://atom.io/themes/hypest-dark).
+A light, native and refined UI theme for Atom, designed for macOS — with
+optional vibrancy, and theming for several popular third-party Atom plugins.
+Also available in a [dark version](https://atom.io/themes/hypest-dark).
 
-> Hypest is currently still in development and there may be rough, unstyled edges.
-> More robust syntax theme support and bundled syntax themes are planned.
+> Hypest is still in development and there may be some rough, unstyled edges.
 
 <img src="https://raw.githubusercontent.com/dizzyup/hypest-light/master/assets/preview.jpg"
 alt="Hypest Preview" width="600" />
 
 ## Installation
 
-You can install Hypest Light from within Atom or via the terminal. Once installed
-select `Hypest Light` from the theme selection menu in Settings.
-
-By default Hypest Light is optimized for light themes. If you wish to use a dark
-theme, for now you'll need to toggle the settings for 'Improve support for dark
-syntax themes'.
+You can install Hypest Light from within Atom or via the terminal. Once
+installed select `Hypest Light` from the theme selection menu in Settings.
 
 ### From the terminal
 
@@ -28,12 +23,40 @@ syntax themes'.
 
 ### From the web
 
-[Install](https://atom.io/themes/hypest-light)
+[Install on Atom.io](https://atom.io/themes/hypest-light)
+
+## Theme settings
+
+### Vibrancy
+
+Hypest has a built in vibrancy mode to allow parts of the window to become
+translucent. Vibrancy is disabled by default.
+
+### Tab close position
+
+The macOS convention for the close icon position in tabs is on the left. If you
+prefer Atom's default position you can switch it to display on the right of tabs
+instead.
+
+### Hide dock buttons
+
+By default Atom displays buttons to reveal panels from the edges of the window
+on hover. You can choose to disable this behavior in Hypest if you'd prefer.
+
+## Syntax theme support
+
+While the Hypest interface is always light, it will automatically detect the
+brightness of your syntax theme and optimize the editor styles to match it. If
+you find issues with your particular syntax theme you can change the Hypest
+theme settings to always match for light or dark.
+
+> Light and dark syntax themes designed for Hypest are planned but aren't
+> available just yet.
 
 ## Plugin support
 
-Hypest UI includes custom theming to support several Atom
-plugins, including a few major third-party ones, including:
+Hypest includes custom theming to support several Atom plugins, including a
+few major third-party ones, including:
 
 - [git & github](https://github.atom.io)
 - [teletype](http://teletype.atom.io)
@@ -42,4 +65,3 @@ plugins, including a few major third-party ones, including:
 - [find-and-replace](https://atom.io/packages/find-and-replace)
 - [project-manager](https://atom.io/packages/project-manager)
 - [file-icons](https://atom.io/packages/file-icons)
-- _More to be confirmed_
