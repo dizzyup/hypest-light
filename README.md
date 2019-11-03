@@ -1,21 +1,17 @@
-<img src="https://raw.githubusercontent.com/dizzyup/hypest-light/master/assets/icon.png?raw=true"
-  alt="Hypest Icon" width="142" height="142" />
-
-# Hypest Light for Atom (β)
+# Hypest Light for Atom
 
 A light, native and refined UI theme for Atom, designed for macOS — with
 optional vibrancy, and theming for several popular third-party Atom plugins.
 Also available in a [dark version](https://atom.io/themes/hypest-dark).
 
-> Hypest is still in development and there may be some rough, unstyled edges.
-
-<img src="https://raw.githubusercontent.com/dizzyup/hypest-light/master/assets/preview.jpg"
-alt="Hypest Preview" width="600" />
+![Preview](https://user-images.githubusercontent.com/717867/68092845-4e58e700-fe87-11e9-979b-597bf10490dc.jpg)
 
 ## Installation
 
 You can install Hypest Light from within Atom or via the terminal. Once
-installed select `Hypest Light` from the theme selection menu in Settings.
+installed select `Hypest Light` from the UI Theme selection dropdown in Settings.
+
+You can also install the [paired syntax theme](https://atom.io/themes/hypest-light-syntax) and then select `Hypest Light` from the Syntax Theme dropdown.
 
 ### From the terminal
 
@@ -50,8 +46,7 @@ brightness of your syntax theme and optimize the editor styles to match it. If
 you find issues with your particular syntax theme you can change the Hypest
 theme settings to always match for light or dark.
 
-> Light and dark syntax themes designed for Hypest are planned but aren't
-> available just yet.
+> Hypest looks best with the matching syntax themes, [hypest-light-syntax](https://atom.io/themes/hypest-light-syntax) and [hypest-dark-syntax](https://atom.io/themes/hypest-dark-syntax)
 
 ## Plugin support
 
